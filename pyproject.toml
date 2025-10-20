@@ -1,0 +1,32 @@
+[project]
+name = "bird-detector-backend"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Komi Bi-Ayéfo ATSOU", email = "marc.atsou@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.7,<3.8"
+
+# Dépendances principales
+dependencies = [
+    "flask",
+    "gunicorn",
+    "flask-cors<6.0",   # compatible avec Python 3.7
+    "numpy",
+    "tensorflow==1.14",
+    "protobuf<3.21",
+    "librosa",
+    "keras",
+    "matplotlib",
+    "scipy",
+    "streaming-form-data",
+    "tensorflowjs"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+# Dépendances de développement (vide ici, à remplir si nécessaire)
+[tool.poetry.group.dev.dependencies]
