@@ -20,6 +20,13 @@ Install dependencies
 poetry install --no-root
 ```
 
+Set environment variables
+
+```
+export SECRET_KEY="myPrivateKey"
+export UPLOAD_FOLDER="static"
+```
+
 Start the server:
 
 ```
