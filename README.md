@@ -43,3 +43,6 @@ Librairies complémentaires
 
 poetry run pip install "librosa==0.7.2" "numba==0.48" "numpy==1.18.5"
 poetry run pip install "h5py==2.10.0"
+
+Générer requirements.txt
+poetry run pip freeze > requirements-poetry-2025-10-23.txt
