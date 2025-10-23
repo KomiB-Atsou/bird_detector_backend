@@ -16,7 +16,7 @@ dependencies = [
     "numpy",
     "tensorflow==1.14",
     "protobuf<3.21",
-    "librosa",
+    "librosa==0.7.1",
     "keras",
     "matplotlib",
     "scipy",

@@ -29,7 +29,7 @@ class RNNDetector:
         if self._model is None:
             self._model = self.create_model()
             self._model.load_weights(self.weights_file)
-            self._model.save('aa')
+            #self._model.save('aa')
         return self._model
 
     def create_model(self):

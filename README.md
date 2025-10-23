@@ -34,3 +34,12 @@ poetry run flask run
 ```
 
 The web app will show "Hello" on a blank web page
+
+
+
+
+
+Librairies complémentaires
+
+poetry run pip install "librosa==0.7.2" "numba==0.48" "numpy==1.18.5"
+poetry run pip install "h5py==2.10.0"

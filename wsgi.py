@@ -96,6 +96,7 @@ def home():
 
                 if passed:
                     filepath = os.path.join(os.path.dirname(__file__), app.config['UPLOAD_FOLDER'], filename)
+                    print("filepath : ", filepath)
 
                     with graph.as_default():
                         set_session(sess)
