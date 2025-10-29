@@ -51,5 +51,6 @@ Tester requête http
 
 curl -X POST -F "file=@/home/komi/test/bird_detector_backend/static/bird1.wav" http://127.0.0.1:5000
 
+
 Dockerisation
 docker build -t bird-detector-backend .
