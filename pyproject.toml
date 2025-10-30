@@ -4,7 +4,6 @@ version = "0.1.0"
 description = ""
 authors = ["Komi Bi-Ayéfo ATSOU <marc.atsou@gmail.com>"]
 readme = "README.md"
-python = ">=3.7,<3.8"
 
 [tool.poetry.dependencies]
 python = ">=3.7,<3.8"

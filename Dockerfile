@@ -32,9 +32,22 @@ WORKDIR /app
 # Copier uniquement les fichiers de dépendances pour tirer profit du cache Docker
 COPY pyproject.toml poetry.lock* /app/
 
+# Désactiver la vérification SSL temporairement pour pip/Poetry
+ENV PIP_DISABLE_PIP_VERSION_CHECK=1
+ENV PIP_NO_CACHE_DIR=1
+ENV PIP_DEFAULT_TIMEOUT=120
+ENV CURL_CA_BUNDLE=""
+ENV SSL_CERT_FILE=""
+
+RUN poetry config certificates.verify false || true
+RUN poetry config installer.parallel false
+
+RUN export SECRET_KEY="myPrivateKey"
+RUN export UPLOAD_FOLDER="static"
+
 # Désactiver la création de virtualenv (on installe dans le conteneur directement)
 RUN poetry config virtualenvs.create false \
-    && poetry install --no-interaction --no-ansi
+   && poetry install --no-root --no-interaction --no-ansi
 
 # Copier tout le code source
 COPY . /app
