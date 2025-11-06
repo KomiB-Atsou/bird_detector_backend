@@ -1,6 +1,6 @@
 Flask backend serving the bird detector model. A request with an audio file to the server returns associated predictions.
 
-# Quick start
+# Quick start without Docker
 
 Requires Python 3.7  
 
@@ -12,7 +12,7 @@ sudo apt install python3.7 python3.7-venv python3.7-distutils -y
 
 # Add to path
 export PATH="$HOME/.local/bin:$PATH"
-```
+```  
 
 Install dependencies
 
@@ -36,21 +36,35 @@ poetry run flask run
 The web app will show "Hello" on a blank web page
 
 
+If necessary, install additional packages
 
-
-
-Librairies complémentaires
-
+```
 poetry run pip install "librosa==0.7.2" "numba==0.48" "numpy==1.18.5"
 poetry run pip install "h5py==2.10.0"
+```
 
-Générer requirements.txt
-poetry run pip freeze > requirements-poetry-2025-10-23.txt
+To generate requirements.txt from poetry's virtual environment
+```
+poetry run pip freeze > requirements-poetry.txt
+```
 
-Tester requête http
-
+Test the model with a http request
+```
 curl -X POST -F "file=@/home/komi/test/bird_detector_backend/static/bird1.wav" http://127.0.0.1:5000
+```
 
+# Quick start with Docker
 
-Dockerisation
+Install and configure Docker  
+https://docs.docker.com/get-started/get-docker/
+
+Dockerize
+```
 docker build -t bird-detector-backend .
+```
+
+Run with Docker
+
+```
+docker run -d -p 5000:5000 --name bird-backend -e SECRET_KEY=myPrivateKey -e UPLOAD_FOLDER=static bird-detector-backend
+```

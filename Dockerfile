@@ -57,5 +57,5 @@ COPY . /app
 # --------------------------
 EXPOSE 5000
 
-# Commande pour lancer Flask avec Gunicorn
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "wsgi:app"]
+# Commande pour lancer Flask avec Gunicorn poetry run flask run
+CMD ["poetry", "run", "flask", "run"]
