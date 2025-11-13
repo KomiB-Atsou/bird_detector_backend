@@ -53,14 +53,19 @@ Test the model with a http request
 curl -X POST -F "file=@/home/komi/test/bird_detector_backend/static/bird1.wav" http://127.0.0.1:5000
 ```
 
-# Quick start with Docker using poetry for dependancy management
+# Quick start with Docker
 
 Install and configure Docker  
 https://docs.docker.com/get-started/get-docker/
 
-Dockerize
+Dockerize using poetry for dependancy management
 ```
 docker build -t bird-detector-backend -f Dockerfile-poetry .
+```
+
+Dockerize without poetry for dependancy management
+```
+docker build -t bird-detector-backend -f Dockerfile-without-poetry .
 ```
 
 Run with Docker
