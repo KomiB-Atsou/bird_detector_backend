@@ -124,5 +124,6 @@ gcloud run deploy bird-detector-backend-app \
   --allow-unauthenticated \
   --port 5000 \
   --memory 2Gi \
-  --cpu 2
+  --cpu 2 \
+  --set-env-vars "SECRET_KEY=myPrivateKey,UPLOAD_FOLDER=static"
 ```
